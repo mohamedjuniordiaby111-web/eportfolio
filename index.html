@@ -32,16 +32,16 @@
             min-width: 300px;
         }
 
-        /* --- EFFET NÉON --- */
+        /* --- NEON EFFECT --- */
         h1, h2, h3 {
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        h1 { /* Titre principal */
+        h1 { /* Main title */
             color: #00eaff;
             text-shadow: 0 0 5px #00eaff, 0 0 10px #00eaff, 0 0 15px #00eaff66;
         }
-        h2 { /* Titres de section */
+        h2 { /* Section titles */
             color: #ff007b;
             text-shadow: 0 0 5px #ff007b, 0 0 10px #ff007b66;
             margin-bottom: 25px;
@@ -97,7 +97,7 @@
             transition: 0.3s;
         }
         nav a:hover, nav a.active-link {
-            color: #fff; 
+            color: #fff;
             text-shadow: 0 0 10px #ff007b;
         }
 
@@ -163,6 +163,16 @@
             height: 10px;
             overflow: hidden;
             box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .progress-text {
+            position: absolute;
+            right: 5px;
+            top: -2px;
+            font-size: 12px;
+            color: #00eaff;
+            font-weight: bold;
+            text-shadow: 0 0 3px #00eaff44;
         }
         .progress-bar {
             height: 100%;
@@ -175,6 +185,38 @@
             color: #ff007b;
             text-shadow: 0 0 5px #ff007b66;
             margin-top: 30px;
+        }
+
+        /* --- GRILLE CERTIFICATIONS --- */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .cert-card {
+            background: rgba(15, 20, 30, 0.8);
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid #00e1ff44;
+            box-shadow: 0 0 10px #00e1ff22;
+            transition: 0.3s;
+            text-align: center;
+        }
+        .cert-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px #00e1ff55;
+        }
+        .cert-card a {
+            color: #00eaff;
+            text-decoration: none;
+            font-weight: 600;
+            text-shadow: 0 0 3px #00eaff44;
+            transition: 0.3s;
+        }
+        .cert-card a:hover {
+            color: #ff007b;
+            text-shadow: 0 0 5px #ff007b;
         }
 
         /* --- RESPONSIVE DESIGN (Mobile) --- */
@@ -218,6 +260,9 @@
             .project-card {
                 flex: 1 1 100%;
             }
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -229,13 +274,14 @@
     <div class="header-left">
         <h2 style="color:#00eaff; margin:0;">E-Portfolio • M.J. Diaby</h2>
         <div class="social-links-container">
-            <a href="[Lien vers votre profil GitHub]" target="_blank" class="social-link" title="Mon GitHub">💻</a>
-            <a href="[Lien vers votre profil LinkedIn]" target="_blank" class="social-link" title="Mon LinkedIn">🔗</a>
+            <a href="https://github.com/mohamedjuniordiaby111-web/eportfolio" target="_blank" class="social-link" title="Mon GitHub">💻</a>
+            <a href="https://www.linkedin.com/in/mohamed-junior-diaby-64a016370/" target="_blank" class="social-link" title="Mon LinkedIn">🔗</a>
         </div>
     </div>
     <nav id="nav-links">
         <a href="#" onclick="showPage('home', this)">Accueil</a>
         <a href="#" onclick="showPage('competences', this)">Compétences</a>
+        <a href="#" onclick="showPage('certifications', this)">Certifications</a>
         <a href="#" onclick="showPage('projets', this)">Projets</a>
         <a href="#" onclick="showPage('veille', this)">Veille</a>
         <a href="#" onclick="showPage('contact', this)">Me contacter</a>
@@ -263,31 +309,31 @@
         <h3 class="skill-category-title">⚡ Réseaux & Systèmes</h3>
         <div class="skill-item">
             <div class="skill-name">Réseaux (Protocoles, Adressage)</div>
-            <div class="progress-bar-container"><div class="progress-bar" data-level="25%"></div></div>
+            <div class="progress-bar-container"><div class="progress-bar" style="width: 25%;"></div><span class="progress-text">25%</span></div>
         </div>
 
          <div class="skill-item">
             <div class="skill-name">Administration systèmes (Windows/Linux)</div>
-            <div class="progress-bar-container"><div class="progress-bar" data-level="25%"></div></div>
+            <div class="progress-bar-container"><div class="progress-bar" style="width: 25%;"></div><span class="progress-text">25%</span></div>
         </div>
 
         <div class="skill-item">
             <div class="skill-name">Sécurité informatique (Firewall, droits)</div>
-            <div class="progress-bar-container"><div class="progress-bar" data-level="20%"></div></div>
+            <div class="progress-bar-container"><div class="progress-bar" style="width: 25%;"></div><span class="progress-text">25%</span></div>
         </div>
 
         <h3 class="skill-category-title">💻 Développement Web & BDD</h3>
         <div class="skill-item">
             <div class="skill-name">HTML / CSS (Intégration responsive)</div>
-            <div class="progress-bar-container"><div class="progress-bar" data-level="60%"></div></div>
+            <div class="progress-bar-container"><div class="progress-bar" style="width: 55%;"></div><span class="progress-text">55%</span></div>
         </div>
         <div class="skill-item">
             <div class="skill-name">JavaScript (Interactivité front-end)</div>
-            <div class="progress-bar-container"><div class="progress-bar" data-level="15%"></div></div>
+            <div class="progress-bar-container"><div class="progress-bar" style="width: 25%;"></div><span class="progress-text">25%</span></div>
         </div>
         <div class="skill-item">
             <div class="skill-name">SQL (Gestion de bases de données)</div>
-            <div class="progress-bar-container"><div class="progress-bar" data-level="12%"></div></div>
+            <div class="progress-bar-container"><div class="progress-bar" style="width: 25%;"></div><span class="progress-text">25%</span></div>
         </div>
 
         <h3 class="skill-category-title">🤝 Compétences Transversales</h3>
@@ -296,6 +342,27 @@
             <li>**Travail en équipe**</li>
             <li>**Analyse financière & budgétaire** (Acquis STMG)</li>
         </ul>
+    </section>
+
+    <section id="certifications" class="page card">
+        <h2>🏆 Certifications</h2>
+
+        <p>Voici mes certifications obtenues :</p>
+
+        <div class="certifications-grid">
+            <div class="cert-card">
+                <a href="image/Cisco_Packet_Tracer.pdf.pdf" target="_blank">Cisco Packet Tracer</a>
+            </div>
+            <div class="cert-card">
+                <a href="image/EBIOS.pdf.pdf" target="_blank">EBIOS</a>
+            </div>
+            <div class="cert-card">
+                <a href="image/Exploring.pdf.pdf" target="_blank">Exploring</a>
+            </div>
+            <div class="cert-card">
+                <a href="image/Introduction_to_Packet_Tracer.pdf.pdf" target="_blank">Introduction to Packet Tracer</a>
+            </div>
+        </div>
     </section>
 
     <section id="projets" class="page card">
@@ -351,70 +418,69 @@
 </main>
 
 <script>
-    // CORRECTION : J'ai mis à jour les niveaux (level) ici pour correspondre
-    // aux pourcentages que vous aviez mis dans l'attribut data-level du HTML.
+    // Skills data array - defines skill names and their levels
     const skills = [
         { id: 'Réseaux (Protocoles, Adressage)', level: '25%' },
         { id: 'Administration systèmes (Windows/Linux)', level: '25%' },
-        { id: 'Sécurité informatique (Firewall, droits)', level: '20%' },
-        { id: 'HTML / CSS (Intégration responsive)', level: '60%' },
-        { id: 'JavaScript (Interactivité front-end)', level: '15%' },
-        { id: 'SQL (Gestion de bases de données)', level: '12%' }
+        { id: 'Sécurité informatique (Firewall, droits)', level: '25%' },
+        { id: 'HTML / CSS (Intégration responsive)', level: '55%' },
+        { id: 'JavaScript (Interactivité front-end)', level: '25%' },
+        { id: 'SQL (Gestion de bases de données)', level: '25%' }
     ];
 
-    // Fonction pour animer les barres
+    // Function to animate skill progress bars
     function animateSkills() {
-        // 1. Réinitialise d'abord toutes les barres à 0%
+        // Reset all progress bars and texts to 0% for animation effect
         document.querySelectorAll('.progress-bar').forEach(bar => {
             bar.style.width = '0%';
         });
+        document.querySelectorAll('.progress-text').forEach(text => {
+            text.textContent = '0%';
+        });
 
-        // 2. Anime avec leur valeur réelle
+        // Animate to actual skill levels with a slight delay for smooth effect
         skills.forEach(skill => {
-            // Utilise la méthode la plus fiable : sélectionner la barre par son attribut data-level
-            const bar = document.querySelector(`.progress-bar[data-level="${skill.level}"]`);
-            
-            if (bar) {
-                // Délai pour l'effet d'animation fluide
-                setTimeout(() => {
-                    bar.style.width = skill.level;
-                }, 100); 
-            }
+            const skillItems = document.querySelectorAll('.skill-item');
+            skillItems.forEach(item => {
+                const name = item.querySelector('.skill-name').textContent.trim();
+                if (name === skill.id) {
+                    const bar = item.querySelector('.progress-bar');
+                    const text = item.querySelector('.progress-text');
+                    // Use requestAnimationFrame for better performance
+                    requestAnimationFrame(() => {
+                        setTimeout(() => {
+                            bar.style.width = skill.level;
+                            text.textContent = skill.level;
+                        }, 100);
+                    });
+                }
+            });
         });
     }
 
-    // Fonction principale de changement de page
+    // Function to show a specific page section
     function showPage(id, element) {
-        // 1. Gère l'affichage des pages
+        // Hide all pages and show the selected one
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         document.getElementById(id).classList.add('active');
 
-        // 2. Gère l'état actif du lien de navigation
+        // Update navigation link active state
         document.querySelectorAll('#nav-links a').forEach(a => a.classList.remove('active-link'));
         if (element) {
             element.classList.add('active-link');
         }
 
-        // 3. Déclenche l'animation si c'est la page Compétences
+        // Trigger skill animation if on the skills page
         if (id === 'competences') {
             animateSkills();
         }
     }
 
-    // Par défaut, met la page "Accueil" en actif au chargement
-    window.onload = function() {
-        const homeLink = document.querySelector('nav a[onclick*="home"]');
-        if (homeLink) {
-            homeLink.classList.add('active-link');
-        }
-        // Pour les projets : Assurez-vous de remplacer ces liens !
-        console.log("N'oubliez pas de remplacer [Lien vers votre profil GitHub] et [Lien vers votre profil LinkedIn] dans le header !");
-    };
-
+    // Function to toggle contact information visibility
     function showContact() {
         const box = document.getElementById('contact-info');
         const button = document.querySelector('#contact .btn');
-        if (box.style.display === 'none') {
+        if (box.style.display === 'none' || box.style.display === '') {
             box.style.display = 'block';
             button.textContent = 'Masquer mes coordonnées';
         } else {
@@ -422,6 +488,62 @@
             button.textContent = 'Afficher mes coordonnées';
         }
     }
+
+    // Initialize the page on load
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set the home page as active by default
+        const homeLink = document.querySelector('nav a[onclick*="home"]');
+        if (homeLink) {
+            homeLink.classList.add('active-link');
+        }
+
+        // Add event listeners for better performance and accessibility
+        // Navigation links
+        document.querySelectorAll('#nav-links a').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const pageId = this.getAttribute('onclick').match(/showPage\('([^']+)'/)[1];
+                showPage(pageId, this);
+            });
+            // Keyboard accessibility
+            link.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    const pageId = this.getAttribute('onclick').match(/showPage\('([^']+)'/)[1];
+                    showPage(pageId, this);
+                }
+            });
+        });
+
+        // Contact button
+        const contactBtn = document.querySelector('#contact .btn');
+        if (contactBtn) {
+            contactBtn.addEventListener('click', showContact);
+            // Keyboard accessibility
+            contactBtn.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    showContact();
+                }
+            });
+        }
+
+        // Optional: Add smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Console reminder for development
+        console.log("Portfolio loaded successfully. Ensure all links are updated!");
+    });
 </script>
 
 </body>
